@@ -16,7 +16,6 @@ export default function useScore(Balls, Strikes) {
           setStrikes(0);
           setBalls(0);
         } else setBalls(balls + 1);
-        setBalls(balls + 1);
         break;
       case "foul":
         if (strikes < 2) setStrikes(2);
@@ -25,6 +24,7 @@ export default function useScore(Balls, Strikes) {
         setStrikes(0);
         setBalls(0);
         break;
+      default: alert("You're passing incorrect value inside useScore() hook")
     }
   }
   return [balls, strikes, scoreChange];
